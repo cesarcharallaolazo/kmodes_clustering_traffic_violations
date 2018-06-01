@@ -11,7 +11,7 @@ import pandas as pd
 from kmodes.kmodes import KModes
 
 # get excel book in pandas
-xls_file = pd.ExcelFile("source/traffic_violations_selected_features_delete_missing.xlsx")
+xls_file = pd.ExcelFile("..\\source\\traffic_violations_selected_features_delete_missing.xlsx")
 
 # get excel sheet - object type: pandas dataframe
 pd_traffic_violations = xls_file.parse('Hoja1')
@@ -34,5 +34,5 @@ print(kmodes.n_iter_)
 pd_traffic_violations['CLUSTER']  = kmodes.labels_ 
 
 # save labeled dataframe to .csv
-pd_traffic_violations.to_csv('clustering/kmodes_clustering_traffic_violations.csv', index = False , header = True)
+pd_traffic_violations.to_csv('..\\clustering\\kmodes_clustering_traffic_violations.csv', index = False , header = True)
 
